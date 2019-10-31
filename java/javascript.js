@@ -18,7 +18,7 @@ if(askorder == "fris" || askorder == "bier" || askorder == "wijn"){
             drink = 3.5
         }
         var prize = asknumber * drink
-        
+        document.write("het aantal "+askorder+" dat u heeft bestelt is "+asknumber+" de prijs is "+prize+" euro"+"<br>");
         order();
     }
     else if(asknumber == "stop"){
@@ -31,15 +31,36 @@ else if(askorder == "stop"){
 else{
     alert("ongeldig invoer!");
 }
-function drink(){
-    var drankje = prompt("wilt u een bestelling toevoegen?");
-    return drankje
-}
 function order(){
-    document.write(drink());
-    while (dringk() != "stop"){
-        
+    var order = prompt("wilt u een bestelling toevoegen?");
+    while(order != "stop"){
+        if(order == "fris" || order == "bier" || order == "wijn"){
+            var number = prompt("hoeveel "+order+" wilt u aan uw bestelling toevoegen?");
+            if(number != "stop"){
+                if(order == "fris"){
+                    drink = 2
+                }
+                else if(order == "bier"){
+                    drink = 2.5
+                }
+                else if(order == "wijn"){
+                    drink = 3.5
+                }
+                var prize = number * drink
+                document.write("het aantal "+order+" dat u heeft bestelt is "+number+" de prijs is "+prize+" euro"+"<br>");
+                order = prompt("wilt u een bestelling toevoegen?");
+            }
+            else if(number == "stop"){
+                alert("bestelling gestopt.");
+            }
+        }
+        else if(order == "stop"){
+            alert("bestelling gestopt.");
+            order = "stop"
+        }
+        else{
+            alert("ongeldig invoer!");
+            order = "stop"
+        }
     }
 }
-
-document.write("het aantal "+askorder+" dat u heeft bestelt is "+asknumber+" de prijs is "+prize+" euro");
