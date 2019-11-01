@@ -1,6 +1,3 @@
-const costfris = 2
-const costbier = 2.5
-var costwijn = 3.5
 var drink = 0
 alert("welkom bij ons cafe Uranus");
 alert("u kunt bij ons kiezen uit fris, bier en wijn");
@@ -36,7 +33,6 @@ function order(){
     while(order != "stop"){
         if(order == "fris" || order == "bier" || order == "wijn"){
             var number = prompt("hoeveel "+order+" wilt u aan uw bestelling toevoegen?");
-            if(number != "stop"){
                 if(order == "fris"){
                     drink = 2
                 }
@@ -49,18 +45,12 @@ function order(){
                 var prize = number * drink
                 document.write("het aantal "+order+" dat u heeft bestelt is "+number+" de prijs is "+prize+" euro"+"<br>");
                 order = prompt("wilt u een bestelling toevoegen?");
-            }
-            else if(number == "stop"){
-                alert("bestelling gestopt.");
-            }
         }
         else if(order == "stop"){
             alert("bestelling gestopt.");
-            order = "stop"
         }
         else{
             alert("ongeldig invoer!");
-            order = "stop"
         }
     }
 }
