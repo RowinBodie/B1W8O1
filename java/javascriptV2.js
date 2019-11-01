@@ -9,17 +9,17 @@ while(order != "stop"){
     if(order != "stop"){
         if(order == "snack"){
             var tally = prompt("Hoeveel bitterballen wilt u bestellen 8 of 16.");
-            var variety = prompt("hoeveel schalen bitteballen wilt u?");
-                amount = drinkamount(order);
-                if(amount == "8"){
-                    choose = 2.9;
+            
+                if(tally == "8"){
+                    choose = 1.5;
                 }
-                else if(amount == "16"){
-                    choose = 4.2;
+                else if(tally == "16"){
+                    choose = 2.5;
                 }
-                prize = amount * choose * variety;
+                var variety = prompt("hoeveel schalen bitteballen wilt u?");
+                prize = tally * choose * variety;
                 totalprize += prize;
-            document.write(+"<br>");
+            document.write("u heeft "+variety+" schalen van "+tally+" bitterballen bestelt voor "+prize+" euro."+"<br>");
         }
         else if(order == "fris" || order == "bier" || order == "wijn"){
             if(order == "fris"){
@@ -45,20 +45,6 @@ while(order != "stop"){
 }
 if(order == "stop"){
     document.write("uw totaal bedrag is "+totalprize+" euro.")
-}
-function snack(amount){
-    var back;
-    if(amount == "8"){
-
-    }
-    else if(amount == "16"){
-
-    }
-    else{
-        alert("ongeldig aantal");
-        back = "-";
-        return back;
-    }
 }
 function drinkamount(drankje){
     var ask = prompt("hoeveel "+drankje+" wilt u toevoegen aan uw bestelling.");
